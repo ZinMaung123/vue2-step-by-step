@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        .toggleColor{
+            background-color: red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <input type="text" v-model="message">
+        <ul>
+            <li v-for='greeting in greetings'>{{ greeting }}</li>
+
+            <input type='text' v-model="newName">
+            <button type="button" v-on:click="addName">Add Name</button>
+        </ul>
+
+        <h2>Attribute and Class Binding</h2>
+        <button v-bind:class="{ 'toggleColor': addedBg }" @click="toggleColor">Toggle Me</button>
+
+        <h2>Computed Properties</h2>
+        <h3>All Tasks</h3>
+        <ul>
+            <li v-for="task in tasks" v-text="task.description"></li>
+        </ul>
+
+        <h3>Incompleted Tasks</h3>
+        <ul>
+            <li v-for="task in incompleteTask" v-text="task.description"></li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                "message" : "Hello World!",
+                "newName" : "",
+                "greetings" : [
+                    "hi",
+                    "hello"
+                ],
+                'addedBg' : false,
+                'tasks' : [
+                    {description: "Do Homework", completed: false},
+                    {description: "Writing", completed: false},
+                    {description: "Reading", completed: true},
+                    {description: "Cycling", completed: true},
+                    {description: "Swiping", completed: false},
+                ]
+            },
+            methods: {
+                addName(){
+                    this.greetings.push(this.newName);
+                    this.newName = "";
+                },
+                toggleColor(){
+                    this.addedBg = !this.addedBg;
+                }
+            },
+            computed: {
+                incompleteTask(){
+                    return this.tasks.filter(task => ! task.completed);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

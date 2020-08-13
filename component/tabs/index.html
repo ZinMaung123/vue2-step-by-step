@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <style>
+        #root{
+            padding: 40px;
+        }
+    </style>
+    <title>Modal</title>
+</head>
+<body>
+    <div id="root" class="container">
+        <tabs>
+            <tab name="About Us" :selected="true">This is About us page</tab>
+            <tab name="Contact Us">This is Contact us page</tab>
+            <tab name="Our Vision">This is our vision</tab>
+        </tabs>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="/component/tabs/main.js"></script>
+</body>
+</html>

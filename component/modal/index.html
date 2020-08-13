@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <title>Modal</title>
+</head>
+<body>
+    <div id="root">
+        <modal v-show="showModal" @close="showModal = false">
+            <p>This is the modal box.</p>
+        </modal>
+
+        <button type="button" @click="showModal = true">Modal</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="/component/modal/main.js"></script>
+</body>
+</html>

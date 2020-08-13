@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <style>
+        #root{
+            padding: 40px;
+        }
+    </style>
+    <title>Modal</title>
+</head>
+<body>
+    <div id="root" class="container">
+        <progress-view inline-template>
+            <div>
+                <h1>Your completed progress is {{ completedProgress }}%</h1>
+
+                <button @click="completedProgress += 10">Update Completion Rate</button>
+            </div>
+        </progress-view>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="/component/inline-template/main.js"></script>
+</body>
+</html>
